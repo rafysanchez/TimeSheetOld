@@ -1,0 +1,141 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="MasterPage.master.vb" Inherits="IntranetVB.MasterPage" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+
+    <title>
+        <asp:ContentPlaceHolder ID="tituloPagina" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+
+    <link rel="stylesheet" media="screen" type="text/css" href="recursos/css/addvisor.css" />
+    <link rel="stylesheet" media="screen" type="text/css" href="recursos/css/cssmenuvertical.css" />
+
+    <style type="text/css">
+        h1 {
+            font: bold 16px Arial, Helvetica, sans-serif;
+        }
+
+        p {
+            font: 11px Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            color: #900;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!--[if gte IE 5.5]>
+    <script language="JavaScript" src="dhtml.js" type="text/JavaScript"></script>
+    <![endif]-->
+
+</head>
+
+<body id="body" runat="server">
+
+    <div class="tudo">
+
+        <div class='cabecalho'>
+
+            <center>
+                <div style="width: 900px; text-align: left; padding-top: 12px;">
+                    <asp:Image ID="imgLogo" ToolTip="" runat="server" ImageUrl="~/imagens/logo.png" />
+                </div>
+            </center>
+
+            <div style="position: absolute; font-size: small; top: 10px; right: 40px; text-align: right;">
+                <asp:HyperLink ID="hlLogout" runat="server" NavigateUrl="~/sair.aspx">Log-out</asp:HyperLink>
+                <br />
+                <asp:Label ID="lblBoasVindas" runat="server" />
+            </div>
+
+            <br />
+            <div id="menuhv">
+                <ul style="padding-left: 190px;">
+                    <li>
+                        <a id="menuLancamentos" runat="server" class="cursor">Apontamentos
+                            <asp:Image ID="Image1" runat="server" ImageUrl="~/imagens/seta_menu.png" /></a>
+                        <ul>
+                            <li>
+                                <a id="lnkApontamento" runat="server" href="apontamento/apontamentoNovo.aspx">Apontar horas</a>
+                            </li>
+                            <li>
+                                <a id="lnkVisualizarApontamento" runat="server" href="~/apontamento/visualizarApontamento.aspx">Visualizar apontamento</a>
+                            </li>
+                            <li>
+                                <a id="lnkDespesas" runat="server" href="~/apontamento/despesas.aspx">Apontar despesas</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="menuCadastros" runat="server" class="cursor">Cadastro
+                            <asp:Image runat="server" ImageUrl="~/imagens/seta_menu.png" /></a>
+                        <ul>
+                            <li>
+                                <a id="lnkCadastroColaborador" runat="server" href="~/cadastros/cadastroColaborador.aspx">Colaborador</a>
+                            </li>
+                            <li>
+                                <a id="lnkCadastroProjeto" runat="server" href="~/cadastros/cadastroProjeto.aspx">Projeto</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="lnkGerenciaProjeto" runat="server" href="~/gerencia/gerenciaProjeto.aspx">Gerência de Projeto</a>
+                    </li>
+                    <li>
+                        <a id="lnkPesquisa" runat="server" href="~/consultaRecursos/recursos.aspx">Recursos</a>
+                    </li>
+                    <li>
+                        <a id="lnkAprovacao" runat="server" href="~/apontamento/aprovacao.aspx">Aprovação</a>
+                    </li>
+                    <li>
+                        <a id="menuFechamento" runat="server" class="cursor">Fechamentos
+                            <asp:Image runat="server" ImageUrl="~/imagens/seta_menu.png" /></a>
+                        <ul>
+                            <li>
+                                <a id="lnkFechamento" runat="server" href="~/gerencia/fechamento.aspx">Fechamento Folha</a>
+                            </li>
+                           <li>
+                                <a id="lnkFechamentoBanco" runat="server" href="~/gerencia/fechamentoBanco.aspx">Fechamento Banco</a>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li>
+                        <a id="lnkRelatorio" runat="server" href="~/gerencia/relatorio.aspx">Relatório</a>
+                    </li>
+                    <li>
+                        <a id="lnkConfig" runat="server" href="~/gerencia/config.aspx">Configurações</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="corpo" id="divCorpo" runat="server">
+            <!-- Aqui vai o conteúdo da página que herdará esta Master Page -->
+            <asp:ContentPlaceHolder ID="corpo" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </div>
+
+    <div class="rodape">
+        <p style="padding-top: 20px;">Addvisor © 2018 | Todos os Direitos Reservados</p>
+    </div>
+
+</body>
+</html>

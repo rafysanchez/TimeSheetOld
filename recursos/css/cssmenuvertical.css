@@ -1,0 +1,15 @@
+
+/* CSS menu Horizontal e Submenu vertical */
+
+#menuhv {height:24px; background:#1F2841; width:100%; text-align:left;}
+#menuhv ul {margin:0; padding:0; list-style:none; float:left;}
+#menuhv ul li {display:inline; float:left;}
+#menuhv ul li a {text-decoration:none; height:100%; padding:4px 13px 4px 13px; font-family:Consolas, Arial; font-size:13px; color:#FFF; 
+                font-weight:Normal; float:left; margin-left:0px; margin-right:0px; vertical-align:middle; }
+#menuhv ul li a:hover {background:#3E617A;}
+#menuhv ul li ul {display:none; width:196px; position: absolute; top:149px; padding:0; margin:0; float:left; background:#3E617A;}
+#menuhv ul li:hover ul {display:block;}
+#menuhv ul li ul li {display:inline; float:left;}
+#menuhv ul li ul li a {width:170px; border-bottom:1px solid #FFF;}
+#menuhv ul li ul li a:hover {background:#5F8DAD;}
+#menuhv .cursor{cursor:default;}

@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="apontamento" targetNamespace="http://tempuri.org/apontamento.xsd" xmlns:mstns="http://tempuri.org/apontamento.xsd" xmlns="http://tempuri.org/apontamento.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="dbIntranetProducao" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dbIntranetProducao (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.dbIntranetProducao.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="dbIntranetConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="dbIntranetConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.dbIntranetConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_relatorioApontamentoTableAdapter" GeneratorDataComponentClassName="v_relatorioApontamentoTableAdapter" Name="v_relatorioApontamento" UserDataComponentName="v_relatorioApontamentoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="dbIntranetProducao (Web.config)" DbObjectName="dbIntranet.dbo.v_relatorioApontamento" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT colCodigo, colNome, perCodigo, colModulo, colNivel, colTipoContrato, colSalario, colValorFechado, proCodigo, proNome, proNomeCliente, apoData, apoEntrada, apoEntAlmoco, apoSaiAlmoco, apoSaida, apoNormais, apoExtras, apoTotal, apoDiaUtil, apoAprovacaoGP, apoAprovacaoGC, apoAprovacaoDir, apoDescricao FROM v_relatorioApontamento</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="colCodigo" DataSetColumn="colCodigo" />
+              <Mapping SourceColumn="colNome" DataSetColumn="colNome" />
+              <Mapping SourceColumn="perCodigo" DataSetColumn="perCodigo" />
+              <Mapping SourceColumn="colModulo" DataSetColumn="colModulo" />
+              <Mapping SourceColumn="colNivel" DataSetColumn="colNivel" />
+              <Mapping SourceColumn="colTipoContrato" DataSetColumn="colTipoContrato" />
+              <Mapping SourceColumn="colSalario" DataSetColumn="colSalario" />
+              <Mapping SourceColumn="colValorFechado" DataSetColumn="colValorFechado" />
+              <Mapping SourceColumn="proCodigo" DataSetColumn="proCodigo" />
+              <Mapping SourceColumn="proNome" DataSetColumn="proNome" />
+              <Mapping SourceColumn="proNomeCliente" DataSetColumn="proNomeCliente" />
+              <Mapping SourceColumn="apoData" DataSetColumn="apoData" />
+              <Mapping SourceColumn="apoEntrada" DataSetColumn="apoEntrada" />
+              <Mapping SourceColumn="apoEntAlmoco" DataSetColumn="apoEntAlmoco" />
+              <Mapping SourceColumn="apoSaiAlmoco" DataSetColumn="apoSaiAlmoco" />
+              <Mapping SourceColumn="apoSaida" DataSetColumn="apoSaida" />
+              <Mapping SourceColumn="apoNormais" DataSetColumn="apoNormais" />
+              <Mapping SourceColumn="apoExtras" DataSetColumn="apoExtras" />
+              <Mapping SourceColumn="apoTotal" DataSetColumn="apoTotal" />
+              <Mapping SourceColumn="totalNormal" DataSetColumn="totalNormal" />
+              <Mapping SourceColumn="totalExtras" DataSetColumn="totalExtras" />
+              <Mapping SourceColumn="totalTotal" DataSetColumn="totalTotal" />
+              <Mapping SourceColumn="apoDiaUtil" DataSetColumn="apoDiaUtil" />
+              <Mapping SourceColumn="apoAprovacaoGP" DataSetColumn="apoAprovacaoGP" />
+              <Mapping SourceColumn="apoAprovacaoGC" DataSetColumn="apoAprovacaoGC" />
+              <Mapping SourceColumn="apoAprovacaoDir" DataSetColumn="apoAprovacaoDir" />
+              <Mapping SourceColumn="apoDescricao" DataSetColumn="apoDescricao" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="apontamento" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="apontamento" msprop:Generator_UserDSName="apontamento">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="v_relatorioApontamento" msprop:Generator_TableClassName="v_relatorioApontamentoDataTable" msprop:Generator_TableVarName="tablev_relatorioApontamento" msprop:Generator_TablePropName="v_relatorioApontamento" msprop:Generator_RowDeletingName="v_relatorioApontamentoRowDeleting" msprop:Generator_UserTableName="v_relatorioApontamento" msprop:Generator_RowChangingName="v_relatorioApontamentoRowChanging" msprop:Generator_RowEvHandlerName="v_relatorioApontamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="v_relatorioApontamentoRowDeleted" msprop:Generator_RowEvArgName="v_relatorioApontamentoRowChangeEvent" msprop:Generator_RowChangedName="v_relatorioApontamentoRowChanged" msprop:Generator_RowClassName="v_relatorioApontamentoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="colCodigo" msprop:Generator_ColumnVarNameInTable="columncolCodigo" msprop:Generator_ColumnPropNameInRow="colCodigo" msprop:Generator_ColumnPropNameInTable="colCodigoColumn" msprop:Generator_UserColumnName="colCodigo" type="xs:int" />
+              <xs:element name="mesReferencia" msprop:Generator_ColumnVarNameInTable="columnmesReferencia" msprop:Generator_ColumnPropNameInRow="mesReferencia" msprop:Generator_ColumnPropNameInTable="mesReferenciaColumn" msprop:Generator_UserColumnName="mesReferencia" type="xs:string" minOccurs="0" />
+              <xs:element name="periodo" msprop:Generator_ColumnVarNameInTable="columnperiodo" msprop:Generator_ColumnPropNameInRow="periodo" msprop:Generator_ColumnPropNameInTable="periodoColumn" msprop:Generator_UserColumnName="periodo" type="xs:string" minOccurs="0" />
+              <xs:element name="responsavel" msprop:Generator_ColumnVarNameInTable="columnresponsavel" msprop:Generator_ColumnPropNameInRow="responsavel" msprop:Generator_ColumnPropNameInTable="responsavelColumn" msprop:Generator_UserColumnName="responsavel" type="xs:string" minOccurs="0" />
+              <xs:element name="colNome" msprop:Generator_ColumnVarNameInTable="columncolNome" msprop:Generator_ColumnPropNameInRow="colNome" msprop:Generator_ColumnPropNameInTable="colNomeColumn" msprop:Generator_UserColumnName="colNome">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="perCodigo" msprop:Generator_ColumnVarNameInTable="columnperCodigo" msprop:Generator_ColumnPropNameInRow="perCodigo" msprop:Generator_ColumnPropNameInTable="perCodigoColumn" msprop:Generator_UserColumnName="perCodigo" type="xs:int" minOccurs="0" />
+              <xs:element name="colModulo" msprop:Generator_ColumnVarNameInTable="columncolModulo" msprop:Generator_ColumnPropNameInRow="colModulo" msprop:Generator_ColumnPropNameInTable="colModuloColumn" msprop:Generator_UserColumnName="colModulo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="colNivel" msprop:Generator_ColumnVarNameInTable="columncolNivel" msprop:Generator_ColumnPropNameInRow="colNivel" msprop:Generator_ColumnPropNameInTable="colNivelColumn" msprop:Generator_UserColumnName="colNivel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="colTipoContrato" msprop:Generator_ColumnVarNameInTable="columncolTipoContrato" msprop:Generator_ColumnPropNameInRow="colTipoContrato" msprop:Generator_ColumnPropNameInTable="colTipoContratoColumn" msprop:Generator_UserColumnName="colTipoContrato" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="colSalario" msprop:Generator_ColumnVarNameInTable="columncolSalario" msprop:Generator_ColumnPropNameInRow="colSalario" msprop:Generator_ColumnPropNameInTable="colSalarioColumn" msprop:Generator_UserColumnName="colSalario" type="xs:decimal" minOccurs="0" />
+              <xs:element name="colValorFechado" msprop:Generator_ColumnVarNameInTable="columncolValorFechado" msprop:Generator_ColumnPropNameInRow="colValorFechado" msprop:Generator_ColumnPropNameInTable="colValorFechadoColumn" msprop:Generator_UserColumnName="colValorFechado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="proCodigo" msprop:Generator_ColumnVarNameInTable="columnproCodigo" msprop:Generator_ColumnPropNameInRow="proCodigo" msprop:Generator_ColumnPropNameInTable="proCodigoColumn" msprop:Generator_UserColumnName="proCodigo" type="xs:int" />
+              <xs:element name="proNome" msprop:Generator_ColumnVarNameInTable="columnproNome" msprop:Generator_ColumnPropNameInRow="proNome" msprop:Generator_ColumnPropNameInTable="proNomeColumn" msprop:Generator_UserColumnName="proNome">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="proNomeCliente" msprop:Generator_ColumnVarNameInTable="columnproNomeCliente" msprop:Generator_ColumnPropNameInRow="proNomeCliente" msprop:Generator_ColumnPropNameInTable="proNomeClienteColumn" msprop:Generator_UserColumnName="proNomeCliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apoData" msprop:Generator_ColumnVarNameInTable="columnapoData" msprop:Generator_ColumnPropNameInRow="apoData" msprop:Generator_ColumnPropNameInTable="apoDataColumn" msprop:Generator_UserColumnName="apoData" type="xs:dateTime" />
+              <xs:element name="apoEntrada" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnapoEntrada" msprop:Generator_ColumnPropNameInRow="apoEntrada" msprop:Generator_ColumnPropNameInTable="apoEntradaColumn" msprop:Generator_UserColumnName="apoEntrada" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apoEntAlmoco" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnapoEntAlmoco" msprop:Generator_ColumnPropNameInRow="apoEntAlmoco" msprop:Generator_ColumnPropNameInTable="apoEntAlmocoColumn" msprop:Generator_UserColumnName="apoEntAlmoco" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apoSaiAlmoco" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnapoSaiAlmoco" msprop:Generator_ColumnPropNameInRow="apoSaiAlmoco" msprop:Generator_ColumnPropNameInTable="apoSaiAlmocoColumn" msprop:Generator_UserColumnName="apoSaiAlmoco" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apoSaida" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnapoSaida" msprop:Generator_ColumnPropNameInRow="apoSaida" msprop:Generator_ColumnPropNameInTable="apoSaidaColumn" msprop:Generator_UserColumnName="apoSaida" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apoNormais" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnapoNormais" msprop:Generator_ColumnPropNameInRow="apoNormais" msprop:Generator_ColumnPropNameInTable="apoNormaisColumn" msprop:Generator_UserColumnName="apoNormais" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apoExtras" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnapoExtras" msprop:Generator_ColumnPropNameInRow="apoExtras" msprop:Generator_ColumnPropNameInTable="apoExtrasColumn" msprop:Generator_UserColumnName="apoExtras" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apoTotal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnapoTotal" msprop:Generator_ColumnPropNameInRow="apoTotal" msprop:Generator_ColumnPropNameInTable="apoTotalColumn" msprop:Generator_UserColumnName="apoTotal" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="totalNormal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotalNormal" msprop:Generator_ColumnPropNameInRow="totalNormal" msprop:Generator_ColumnPropNameInTable="totalNormalColumn" msprop:Generator_UserColumnName="totalNormal" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="totalExtras" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotalExtras" msprop:Generator_ColumnPropNameInRow="totalExtras" msprop:Generator_ColumnPropNameInTable="totalExtrasColumn" msprop:Generator_UserColumnName="totalExtras" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="totalTotal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotalTotal" msprop:Generator_ColumnPropNameInRow="totalTotal" msprop:Generator_ColumnPropNameInTable="totalTotalColumn" msprop:Generator_UserColumnName="totalTotal" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apoDiaUtil" msprop:Generator_ColumnVarNameInTable="columnapoDiaUtil" msprop:Generator_ColumnPropNameInRow="apoDiaUtil" msprop:Generator_ColumnPropNameInTable="apoDiaUtilColumn" msprop:Generator_UserColumnName="apoDiaUtil">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apoAprovacaoGP" msprop:Generator_ColumnVarNameInTable="columnapoAprovacaoGP" msprop:Generator_ColumnPropNameInRow="apoAprovacaoGP" msprop:Generator_ColumnPropNameInTable="apoAprovacaoGPColumn" msprop:Generator_UserColumnName="apoAprovacaoGP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apoAprovacaoGC" msprop:Generator_ColumnVarNameInTable="columnapoAprovacaoGC" msprop:Generator_ColumnPropNameInRow="apoAprovacaoGC" msprop:Generator_ColumnPropNameInTable="apoAprovacaoGCColumn" msprop:Generator_UserColumnName="apoAprovacaoGC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apoAprovacaoDir" msprop:Generator_ColumnVarNameInTable="columnapoAprovacaoDir" msprop:Generator_ColumnPropNameInRow="apoAprovacaoDir" msprop:Generator_ColumnPropNameInTable="apoAprovacaoDirColumn" msprop:Generator_UserColumnName="apoAprovacaoDir" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apoDescricao" msprop:Generator_ColumnVarNameInTable="columnapoDescricao" msprop:Generator_ColumnPropNameInRow="apoDescricao" msprop:Generator_ColumnPropNameInTable="apoDescricaoColumn" msprop:Generator_UserColumnName="apoDescricao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

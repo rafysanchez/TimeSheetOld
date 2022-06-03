@@ -1,0 +1,648 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E9B24DB-71CD-4664-91B5-9D9B15E3D00F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>IntranetVB</RootNamespace>
+    <AssemblyName>IntranetVB</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>IntranetVB.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>Full</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>IntranetVB.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugSymbols>true</DebugSymbols>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>IntranetVB.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>IntranetVB.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>Full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AjaxControlToolkit, Version=4.1.60623.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Apontamento\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxControlToolkit.resources">
+      <HintPath>lib\Ajax\AjaxControlToolkit.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxControlToolkit.ScriptUserControl, Version=18.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\AjaxControlToolkit.ScriptUserControl.18.1.1\lib\net40\AjaxControlToolkit.ScriptUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxPro">
+      <HintPath>lib\Ajax\AjaxPro.dll</HintPath>
+    </Reference>
+    <Reference Include="FuncoesGerais">
+      <HintPath>lib\FuncoesGerais.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="apontamentoReport\WebForm2.aspx" />
+    <Content Include="apontamento\despesas.aspx" />
+    <Content Include="apontamentoReport\apontamento.aspx" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="gerencia\FechamentoBanco.aspx" />
+    <Content Include="imagens\16m.png" />
+    <Content Include="imagens\16s.png" />
+    <Content Include="imagens\btnImprimir.jpg" />
+    <Content Include="imagens\btn_bg.jpg" />
+    <Content Include="imagens\editar.png" />
+    <Content Include="imagens\icone-calendario.jpg" />
+    <Content Include="imagens\logo.png" />
+    <Content Include="imagens\seta_menu.png" />
+    <Content Include="recursos\css\addvisor.css" />
+    <Content Include="recursos\css\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="recursos\css\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="recursos\css\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="recursos\css\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="recursos\css\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="recursos\css\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="recursos\css\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="recursos\css\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="recursos\css\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="recursos\css\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="recursos\css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="recursos\css\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="recursos\css\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="recursos\css\janelaModal.css" />
+    <Content Include="recursos\css\jquery-ui.min.css" />
+    <Content Include="recursos\css\jquery-ui.multidatespicker.css" />
+    <Content Include="recursos\jQuery\jquery-3.3.1.min.js" />
+    <Content Include="recursos\jQuery\jquery-ui.min.js" />
+    <Content Include="recursos\jQuery\jQuery.maskMoney.js" />
+    <Content Include="recursos\jQuery\jquery.maskedinput-1.2.2.js" />
+    <Content Include="recursos\jQuery\jquery.superbox.js" />
+    <Content Include="recursos\js\jquery-ui.multidatespicker.js" />
+    <Content Include="recursos\js\swfobject.js" />
+    <Content Include="recursos\jQuery\jquery.mascaraDinheiro.js" />
+    <Content Include="recursos\jQuery\prompt.js" />
+    <Content Include="imagens\sinalAmarelo.png" />
+    <Content Include="imagens\sinalVerde.png" />
+    <Content Include="imagens\sinalVermelho.png" />
+    <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.6.0.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.13.0.js" />
+    <Content Include="Scripts\jquery-ui-1.13.0.min.js" />
+    <Content Include="testes\Default.aspx" />
+    <Content Include="testes\Default.aspx.cs" />
+    <Content Include="testes\lendoArquivoXLSX.aspx" />
+    <Content Include="testes\menuHsubmenuV.aspx" />
+    <Content Include="testes\menusPermissao.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="apontamentoReport\WebForm2.aspx.designer.vb">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="apontamentoReport\WebForm2.aspx.vb">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="apontamento\apontamentoNovo.aspx.designer.vb">
+      <DependentUpon>apontamentoNovo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="apontamento\apontamentoNovo.aspx.vb">
+      <DependentUpon>apontamentoNovo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="apontamento\aprovacao.aspx.designer.vb">
+      <DependentUpon>aprovacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="apontamento\aprovacao.aspx.vb">
+      <DependentUpon>aprovacao.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="apontamento\despesas.aspx.designer.vb">
+      <DependentUpon>despesas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="apontamento\despesas.aspx.vb">
+      <DependentUpon>despesas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="apontamentoReport\apontamento.aspx.designer.vb">
+      <DependentUpon>apontamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="apontamentoReport\apontamento.aspx.vb">
+      <DependentUpon>apontamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="apontamentoReport\dsApontamento.vb">
+      <DependentUpon>dsApontamento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="apontamento\visualizar.aspx.designer.vb">
+      <DependentUpon>visualizar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="apontamento\visualizar.aspx.vb">
+      <DependentUpon>visualizar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="apontamento\visualizarApontamento.aspx.designer.vb">
+      <DependentUpon>visualizarApontamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="apontamento\visualizarApontamento.aspx.vb">
+      <DependentUpon>visualizarApontamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AutoCompletar.asmx.vb">
+      <DependentUpon>AutoCompletar.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="boasVindas.aspx.designer.vb">
+      <DependentUpon>boasVindas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="boasVindas.aspx.vb">
+      <DependentUpon>boasVindas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="cadastros\cadastroColaborador.aspx.designer.vb">
+      <DependentUpon>cadastroColaborador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cadastros\cadastroColaborador.aspx.vb">
+      <DependentUpon>cadastroColaborador.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="cadastros\cadastroProjeto.aspx.designer.vb">
+      <DependentUpon>cadastroProjeto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cadastros\cadastroProjeto.aspx.vb">
+      <DependentUpon>cadastroProjeto.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="cadastros\exibeTodosColaboradores.aspx.designer.vb">
+      <DependentUpon>exibeTodosColaboradores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cadastros\exibeTodosColaboradores.aspx.vb">
+      <DependentUpon>exibeTodosColaboradores.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="consultaRecursos\exibeEmails.aspx.designer.vb">
+      <DependentUpon>exibeEmails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="consultaRecursos\exibeEmails.aspx.vb">
+      <DependentUpon>exibeEmails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="consultaRecursos\recursos.aspx.designer.vb">
+      <DependentUpon>recursos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="consultaRecursos\recursos.aspx.vb">
+      <DependentUpon>recursos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="App_Data\App_Code\email.vb" />
+    <Compile Include="apontamentoReport\dsApontamento.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsApontamento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="gerencia\config.aspx.designer.vb">
+      <DependentUpon>config.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gerencia\config.aspx.vb">
+      <DependentUpon>config.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="gerencia\FechamentoBanco.aspx.designer.vb">
+      <DependentUpon>FechamentoBanco.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gerencia\FechamentoBanco.aspx.vb">
+      <DependentUpon>FechamentoBanco.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="gerencia\relatorio.aspx.designer.vb">
+      <DependentUpon>relatorio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gerencia\relatorio.aspx.vb">
+      <DependentUpon>relatorio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="gerencia\gerenciaProjeto.aspx.designer.vb">
+      <DependentUpon>gerenciaProjeto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gerencia\gerenciaProjeto.aspx.vb">
+      <DependentUpon>gerenciaProjeto.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="gerencia\fechamento.aspx.designer.vb">
+      <DependentUpon>fechamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gerencia\fechamento.aspx.vb">
+      <DependentUpon>fechamento.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="modulos\Calendario.vb" />
+    <Compile Include="modulos\Feriados.vb" />
+    <Compile Include="paginaManutencao\Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="paginaManutencao\Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="refazerLogin.aspx.designer.vb">
+      <DependentUpon>refazerLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="refazerLogin.aspx.vb">
+      <DependentUpon>refazerLogin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="sair.aspx.designer.vb">
+      <DependentUpon>sair.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sair.aspx.vb">
+      <DependentUpon>sair.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.vb">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.vb">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="modulos\funcoes_AD.vb" />
+    <Compile Include="Default.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="modulos\funcoesGerais.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="testes\calculaHoras.aspx.designer.vb">
+      <DependentUpon>calculaHoras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testes\calculaHoras.aspx.vb">
+      <DependentUpon>calculaHoras.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="testes\CheckBoxList.aspx.designer.vb">
+      <DependentUpon>CheckBoxList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testes\CheckBoxList.aspx.vb">
+      <DependentUpon>CheckBoxList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="testes\ControleDropDownList.aspx.designer.vb">
+      <DependentUpon>ControleDropDownList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testes\ControleDropDownList.aspx.vb">
+      <DependentUpon>ControleDropDownList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testes\exemplo.aspx.designer.vb">
+      <DependentUpon>exemplo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testes\exemplo.aspx.vb">
+      <DependentUpon>exemplo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testes\lendoArquivoXLSX.aspx.designer.vb">
+      <DependentUpon>lendoArquivoXLSX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testes\lendoArquivoXLSX.aspx.vb">
+      <DependentUpon>lendoArquivoXLSX.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="testes\ListaConsultores.aspx.designer.vb">
+      <DependentUpon>ListaConsultores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testes\ListaConsultores.aspx.vb">
+      <DependentUpon>ListaConsultores.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="testes\listview_com_checkBox.aspx.designer.vb">
+      <DependentUpon>listview_com_checkBox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testes\listview_com_checkBox.aspx.vb">
+      <DependentUpon>listview_com_checkBox.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="testes\menuHsubmenuV.aspx.designer.vb">
+      <DependentUpon>menuHsubmenuV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testes\menuHsubmenuV.aspx.vb">
+      <DependentUpon>menuHsubmenuV.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="testes\menusPermissao.aspx.designer.vb">
+      <DependentUpon>menusPermissao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testes\menusPermissao.aspx.vb">
+      <DependentUpon>menusPermissao.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="testes\ShowHide.aspx.designer.vb">
+      <DependentUpon>ShowHide.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testes\ShowHide.aspx.vb">
+      <DependentUpon>ShowHide.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="testes\tabelaCabecalhoFixo.aspx.designer.vb">
+      <DependentUpon>tabelaCabecalhoFixo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testes\tabelaCabecalhoFixo.aspx.vb">
+      <DependentUpon>tabelaCabecalhoFixo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="apontamento\apontamentoNovo.aspx" />
+    <Content Include="apontamento\aprovacao.aspx" />
+    <Content Include="apontamento\visualizar.aspx" />
+    <Content Include="apontamento\visualizarApontamento.aspx" />
+    <Content Include="AutoCompletar.asmx" />
+    <Content Include="boasVindas.aspx" />
+    <Content Include="cadastros\cadastroColaborador.aspx" />
+    <Content Include="cadastros\cadastroProjeto.aspx" />
+    <Content Include="cadastros\exibeTodosColaboradores.aspx" />
+    <Content Include="consultaRecursos\exibeEmails.aspx" />
+    <Content Include="consultaRecursos\recursos.aspx" />
+    <Content Include="gerencia\config.aspx" />
+    <Content Include="gerencia\relatorio.aspx" />
+    <Content Include="gerencia\gerenciaProjeto.aspx" />
+    <Content Include="gerencia\fechamento.aspx" />
+    <Content Include="imagens\firstPage.png" />
+    <Content Include="imagens\lastPage.png" />
+    <Content Include="imagens\lupa.gif" />
+    <Content Include="imagens\manutencao.gif" />
+    <Content Include="imagens\manutencao2.gif" />
+    <Content Include="imagens\next.png" />
+    <Content Include="imagens\notice.png" />
+    <Content Include="imagens\positivo.png" />
+    <Content Include="imagens\previous.png" />
+    <Content Include="imagens\progress.gif" />
+    <Content Include="recursos\css\cssmenuvertical.css" />
+    <Content Include="recursos\flash\logo_addvisor.swf" />
+    <Content Include="recursos\jQuery\jquery-1.7-vsdoc.js" />
+    <Content Include="recursos\jQuery\jquery-1.7.min.js" />
+    <Content Include="recursos\jQuery\jquery.chromatable.js" />
+    <Content Include="recursos\jQuery\jquery.floatnumber.js" />
+    <Content Include="recursos\jQuery\jquery.numeric.pack.js" />
+    <Content Include="recursos\jQuery\jquery.animate-colors-min.js" />
+    <Content Include="recursos\jQuery\meiomask.js" />
+    <Content Include="recursos\jQuery\webtoolkit.jscrollable.js" />
+    <Content Include="recursos\jQuery\webtoolkit.scrollabletable.js" />
+    <Content Include="paginaManutencao\Default.aspx" />
+    <Content Include="refazerLogin.aspx" />
+    <Content Include="sair.aspx" />
+    <Content Include="MasterPage.Master" />
+    <Content Include="testes\calculaHoras.aspx" />
+    <Content Include="testes\CheckBoxList.aspx" />
+    <Content Include="testes\ControleDropDownList.aspx" />
+    <Content Include="testes\exemplo.aspx" />
+    <Content Include="testes\ListaConsultores.aspx" />
+    <Content Include="testes\listview_com_checkBox.aspx" />
+    <Content Include="testes\ShowHide.aspx" />
+    <Content Include="testes\tabelaCabecalhoFixo.aspx" />
+    <None Include="apontamentoReport\dsApontamento.xsc">
+      <DependentUpon>dsApontamento.xsd</DependentUpon>
+    </None>
+    <None Include="apontamentoReport\dsApontamento.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsApontamento.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="apontamentoReport\dsApontamento.xss">
+      <DependentUpon>dsApontamento.xsd</DependentUpon>
+    </None>
+    <Content Include="apontamentoReport\rvApontamento1.rdlc" />
+    <Content Include="apontamentoReport\rvApontamento2.rdlc" />
+    <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="packages.config" />
+    <None Include="recursos\fonts\AGENCYB.TTF" />
+    <None Include="recursos\fonts\AGENCYR.TTF" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8080</DevelopmentServerPort>
+          <DevelopmentServerVPath>/apontamento</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8081</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

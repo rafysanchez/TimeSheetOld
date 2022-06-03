@@ -1,0 +1,10 @@
+﻿/* Tema personalizado da janela Modal */
+#superbox-container .loading{width:88px;height:78px;margin:0 auto;text-indent:-9999px;background:url(../../Scripts/img/load.gif) no-repeat 0 0;}
+#superbox .close a{float:right; padding:0 5px; line-height:25px; cursor:pointer;}
+#superbox .close a span{color:#000;}
+#superbox .nextprev a{float:left; padding:0 5px; line-height:25px; width:70px; color:#FFF; text-decoration:none; 
+                        font-family:Agency FB, Arial; cursor:pointer; }		
+#superbox .nextprev a.prev{ margin-left:15px; margin-right:80px; background:#6499D1;}
+#superbox .nextprev a.next{ margin-left:80px; margin-right:10px; background:#6499D1;}     
+#superbox .nextprev a.prev.disabled{background:#CCC; cursor:default;}                                                 			                      
+#superbox .nextprev a.next.disabled{background:#CCC; cursor:default;}
