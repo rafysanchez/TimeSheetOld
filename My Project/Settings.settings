@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="strConnAddvisor" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Data Source=localhost;Initial Catalog=dbIntranet;User Id=intranet;Password=Banco!@#Add;</Value>
+      <Value Profile="(Default)">Data Source=172.22.0.14;Initial Catalog=dbIntranet;User Id=intranet;Password=Banco!@#Add;</Value>
     </Setting>
   </Settings>
 </SettingsFile>

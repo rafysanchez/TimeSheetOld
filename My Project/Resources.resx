@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="strConnAddvisor" xml:space="preserve">
-    <value>Data Source=10.20.2.110;Initial Catalog=dbIntranet;User Id=intranet;Password=Banco!@#Add;</value>
+    <value>Data Source=172.22.0.14;Initial Catalog=dbIntranet;User Id=intranet;Password=Banco!@#Add;</value>
     <comment>String de conexão do Banco de dados SQL Server </comment>
   </data>
   <data name="strConnPogo" xml:space="preserve">
