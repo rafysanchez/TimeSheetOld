@@ -286,26 +286,26 @@ Public Class rvApontamento
                     somaTotal = somaHoras(somaTotal, horaTotal)
 
 
-                    dtRelatorio.Rows.Add(New Object() {dataFormatada, apoDiaUtil, nomeColaborador, modulo, nivel, _
-                                                        mesReferencia, NomeResponsavel, periodo, _
-                                                        somaNormais, somaExtras, somaTotal, _
-                                                        nomeProjeto, nomeCliente, apoEntrada, _
-                                                        apoEntAlmoco, apoSaiAlmoco, apoSaida, _
-                                                        horaNormal, horaExtra, horaTotal, _
+                    dtRelatorio.Rows.Add(New Object() {dataFormatada, apoDiaUtil, nomeColaborador, modulo, nivel,
+                                                        mesReferencia, NomeResponsavel, periodo,
+                                                        somaNormais, somaExtras, somaTotal,
+                                                        nomeProjeto, nomeCliente, apoEntrada,
+                                                        apoEntAlmoco, apoSaiAlmoco, apoSaida,
+                                                        horaNormal, horaExtra, horaTotal,
                                                         apoDescricao})
                     dr.Read()
                 Else
-                    dtRelatorio.Rows.Add(New Object() {dataFormatada, apoDiaUtil, nomeColaborador, modulo, nivel, _
-                                                       mesReferencia, NomeResponsavel, periodo, _
-                                                       somaNormais, somaExtras, somaTotal, _
-                                                       nomeProjeto, nomeCliente, "", "", "", "", _
+                    dtRelatorio.Rows.Add(New Object() {dataFormatada, apoDiaUtil, nomeColaborador, modulo, nivel,
+                                                       mesReferencia, NomeResponsavel, periodo,
+                                                       somaNormais, somaExtras, somaTotal,
+                                                       nomeProjeto, nomeCliente, "", "", "", "",
                                                        "", "", "", ""})
                 End If
             Catch ex As Exception
-                dtRelatorio.Rows.Add(New Object() {dataFormatada, apoDiaUtil, "", "", "", _
-                                                    "", "", "", _
-                                                    somaNormais, somaExtras, somaTotal, _
-                                                    "", "", "", "", "", "", _
+                dtRelatorio.Rows.Add(New Object() {dataFormatada, apoDiaUtil, "", "", "",
+                                                    "", "", "",
+                                                    somaNormais, somaExtras, somaTotal,
+                                                    "", "", "", "", "", "",
                                                     "", "", "", ""})
             End Try
 
@@ -437,7 +437,7 @@ Public Class rvApontamento
                 apoDiaUtil = "N"
             End If
 
-            SQL = "SELECT * FROM v_relatorioApontamento " & _
+            SQL = "SELECT * FROM v_relatorioApontamento " &
                   "WHERE colCodigo = " & colCodigo & " AND apoData = '" & varData & "'"
 
             ' Função que se faz um select no banco de dados e retorna dataReader "dr" como um objeto publico
@@ -536,16 +536,16 @@ Public Class rvApontamento
                 somaExtras = somaHoras(somaExtras, horasExtra)
                 somaTotal = somaHoras(somaTotal, horasTotal)
 
-                dtRelatorio.Rows.Add(New Object() {data, apoDiaUtil, nomeColaborador, modulo, nivel, _
-                                                        mesReferencia, NomeResponsavel, periodo, _
-                                                        somaNormais, somaExtras, somaTotal, _
-                                                        "", "", entrada, entAlmoco, saiAlmoco, saida, _
+                dtRelatorio.Rows.Add(New Object() {data, apoDiaUtil, nomeColaborador, modulo, nivel,
+                                                        mesReferencia, NomeResponsavel, periodo,
+                                                        somaNormais, somaExtras, somaTotal,
+                                                        "", "", entrada, entAlmoco, saiAlmoco, saida,
                                                         horasNormal, horasExtra, horasTotal, descricao})
             Else
-                dtRelatorio.Rows.Add(New Object() {data, apoDiaUtil, nomeColaborador, modulo, nivel, _
-                                                        mesReferencia, NomeResponsavel, periodo, _
-                                                        somaNormais, somaExtras, somaTotal, _
-                                                        "", "", entrada, entAlmoco, saiAlmoco, saida, _
+                dtRelatorio.Rows.Add(New Object() {data, apoDiaUtil, nomeColaborador, modulo, nivel,
+                                                        mesReferencia, NomeResponsavel, periodo,
+                                                        somaNormais, somaExtras, somaTotal,
+                                                        "", "", entrada, entAlmoco, saiAlmoco, saida,
                                                         horasNormal, horasExtra, horasTotal, descricao})
             End If
 

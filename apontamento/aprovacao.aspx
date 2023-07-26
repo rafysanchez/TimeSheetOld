@@ -1,6 +1,8 @@
 <%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage.Master" CodeBehind="aprovacao.aspx.vb" Inherits="IntranetVB.aprovacao" %>
 
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" EnablePartialRendering="true" CombineScripts="false" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="tituloPagina" runat="server">
     Aprovação dos apontamentos
