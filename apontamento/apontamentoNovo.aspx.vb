@@ -88,6 +88,7 @@ Partial Public Class ApontamentoNovo
             lblTitulo1.Style.Add("color", "Gray")
             lblTitulo1.Text = "Apontamento do Projeto : " & ddlProjetos.SelectedItem.Text
             CarregaHorasMes()
+            AjusteHoraExtra()
             preencheTabelaApontamento(dataInicio, anoNum, ddlProjetos.SelectedValue, Session("colCodigoLogado"))
             ' varivel de controle de horas - limitado pela config horamesdias
 
@@ -117,6 +118,21 @@ Partial Public Class ApontamentoNovo
         End If
     End Sub
 
+    Private Sub AjusteHoraExtra()
+
+        Dim colCodigo As Short = Session("colCodigoLogado")
+
+        SQL = "Select * FROM v_colaboradores WHERE colCodigo = '" & colCodigo & "'"
+
+        If selectSQL(SQL) Then
+            If dr.HasRows Then
+                dr.Read()
+                permitirHoraExtra.Value = dr("horasExtras")
+                Session("permitirHoraExtra") = dr("horasExtras")
+            End If
+
+        End If
+    End Sub
 
     Private Sub preencheTabelaApontamento(ByVal dataInicio As Date, ByVal anoNum As Integer,
                                           ByVal proCodigo As Integer, ByVal colCodigo As Integer)

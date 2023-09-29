@@ -95,6 +95,15 @@ Partial Public Class ApontamentoNovo
     Protected WithEvents valHoraTotalMes As Global.System.Web.UI.HtmlControls.HtmlInputHidden
 
     '''<summary>
+    '''permitirHoraExtra control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents permitirHoraExtra As Global.System.Web.UI.HtmlControls.HtmlInputHidden
+
+    '''<summary>
     '''txtColCodigo control.
     '''</summary>
     '''<remarks>

@@ -611,40 +611,44 @@
 
             // ajuste para horas do mes
             var valHoraTotalMes = $("[id$=valHoraTotalMes]").val();
-            debugger;
+            var hrExtra = $("[id$=permitirHoraExtra]").val();
+            console.log('hrExtra', hrExtra);
             var somaLimpa = somaTotal.toString();
             let arr = somaLimpa.split(":");
-            console.log(somaLimpa);
-            console.log(arr[0]);
+
             somaLimpa = arr[0];
-            if (somaLimpa > valHoraTotalMes) {
 
-                console.log('entrou no if'); console.log(parseInt(somaLimpa));
-                $("[id$=btnSalvar]").css("backgroundColor", "#d3d3d3");
-                $("[id$=btnSalvar]").prop("disabled", true);
-                //$("[id$=lblHorasExcesso]").html = "Suas horas excederam o total permitido";
-                //document.getElementById("#ctl00_corpo_lblHorasExcesso").innerHTML = "Suas horas excederam o total permitido";
-                $("[id$=lblHorasExcesso2]").val('Suas horas excederam o total permitido:' + valHoraTotalMes + ' hrs.');
-         
-                console.log('saiu no if');
-               
-            }
-            else if (somaLimpa == valHoraTotalMes) {
-                $("[id$=btnSalvar]").prop('disabled', false);
-                $("[id$=btnSalvar]").css("backgroundColor", "#ffffff");
-                $("[id$=lblHorasExcesso2]").val('...');
-            }
-            else if (somaLimpa < valHoraTotalMes)  {
-                //alert(somaTotal + '-' + valHoraTotalMes)
-                console.log('entrou no else');
-                $("[id$=btnSalvar]").prop('disabled', false);
-                $("[id$=btnSalvar]").css("backgroundColor", "#ffffff");
-                $("[id$=lblHorasExcesso2]").val('...');
-                // $("#btnSalvar").attr("disabled", true);
-                console.log('saiu do else');
-            }
+            if (hrExtra == 0) {
+                if (somaLimpa > valHoraTotalMes) {
 
+                    console.log('entrou no if'); 
+                    $("[id$=btnSalvar]").css("backgroundColor", "#d3d3d3");
+                    $("[id$=btnSalvar]").prop("disabled", true);
+                    $("[id$=lblHorasExcesso2]").val('Suas horas excederam o total permitido:' + valHoraTotalMes + ' hrs.');
+
+                    console.log('saiu no if');
+
+                }
+                else if (somaLimpa == valHoraTotalMes) {
+                    $("[id$=btnSalvar]").prop('disabled', false);
+                    $("[id$=btnSalvar]").css("backgroundColor", "#ffffff");
+                    $("[id$=lblHorasExcesso2]").val('...');
+                }
+                else if (somaLimpa < valHoraTotalMes) {
+                    //alert(somaTotal + '-' + valHoraTotalMes)
+                    console.log('entrou no else');
+                    $("[id$=btnSalvar]").prop('disabled', false);
+                    $("[id$=btnSalvar]").css("backgroundColor", "#ffffff");
+                    $("[id$=lblHorasExcesso2]").val('...');
+                    // $("#btnSalvar").attr("disabled", true);
+                    console.log('saiu do else');
+                }
+
+            }
         }
+
+
+
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         function validaHoras(campo, e) {
 
@@ -854,6 +858,7 @@
                     <input type="hidden" id="varafpDiaEmDiante" runat="server" />
                     <input type="hidden" id="qtdDiasMes" runat="server" />
                     <input type="hidden" id="valHoraTotalMes" runat="server" />
+                    <input type="hidden" id="permitirHoraExtra" runat="server" />
 
                     <input type="hidden" id="txtColCodigo" runat="server" />
                     <input type="hidden" id="txtProCodigo" runat="server" />
@@ -2214,7 +2219,7 @@
                                         readonly="readonly" id="lblTotalTotal" runat="server" value="00:00" />
                                 </td>
                                 <td style="background-color: #E4E4E4;" align="left">
-                                 <input type="text" style="background-color: #E4E4E4; border-style: none; width: 366px; font-weight: bold; font-family: Verdana; font-size: 12px;"
+                                    <input type="text" style="background-color: #E4E4E4; border-style: none; width: 366px; font-weight: bold; font-family: Verdana; font-size: 12px;"
                                         readonly="readonly" id="lblHorasExcesso2" runat="server" value="..." />
                                 </td>
                             </tr>
