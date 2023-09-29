@@ -30,9 +30,9 @@
             text-decoration: none;
         }
 
-            a:hover {
-                text-decoration: underline;
-            }
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -108,7 +108,7 @@
                             <li>
                                 <a id="lnkFechamento" runat="server" href="~/gerencia/fechamento.aspx">Fechamento Folha</a>
                             </li>
-                           <li>
+                            <li>
                                 <a id="lnkFechamentoBanco" runat="server" href="~/gerencia/fechamentoBanco.aspx">Fechamento Banco</a>
                             </li>
                         </ul>

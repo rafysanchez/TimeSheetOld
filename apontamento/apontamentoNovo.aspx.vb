@@ -87,7 +87,10 @@ Partial Public Class ApontamentoNovo
         If ddlProjetos.SelectedIndex > 0 And ddlMes.SelectedIndex > 0 Then
             lblTitulo1.Style.Add("color", "Gray")
             lblTitulo1.Text = "Apontamento do Projeto : " & ddlProjetos.SelectedItem.Text
+            CarregaHorasMes()
             preencheTabelaApontamento(dataInicio, anoNum, ddlProjetos.SelectedValue, Session("colCodigoLogado"))
+            ' varivel de controle de horas - limitado pela config horamesdias
+
         Else
             divTabelaApontamento.Style.Add("display", "none")
             lblTitulo1.Style.Add("color", "Red")
@@ -95,6 +98,25 @@ Partial Public Class ApontamentoNovo
         End If
 
     End Sub
+
+    Private Sub CarregaHorasMes()
+        Dim varMes As String = ddlMes.SelectedItem.Text
+        Dim varAno As String = ddlAno.SelectedValue
+        Dim totalHorasMes As String = "0"
+
+        ' vai no banco buscar o numero de horas padrao
+        SQL = "SELECT TOP 1 qtdHorasPorMes FROM [dbIntranet].[dbo].[tblDiasHorasMes] where mes = '" & varMes & "' and ano = '" & varAno & "'"
+        If selectSQL(SQL) Then
+            If dr.HasRows Then
+                dr.Read()
+                totalHorasMes = dr("qtdHorasPorMes")
+                valHoraTotalMes.Value = totalHorasMes
+                Session("qtdHorasPorMes") = totalHorasMes
+            End If
+
+        End If
+    End Sub
+
 
     Private Sub preencheTabelaApontamento(ByVal dataInicio As Date, ByVal anoNum As Integer,
                                           ByVal proCodigo As Integer, ByVal colCodigo As Integer)
@@ -334,6 +356,14 @@ Partial Public Class ApontamentoNovo
         lblTotalNormais.Value = somaNormais
         lblTotalExtras.Value = somaExtras
         lblTotalTotal.Value = somaTotal
+
+        If Convert.ToInt32(somaTotal.Substring(0, 3)) > Convert.ToInt32(Session("qtdHorasPorMes")) Then
+
+            CType(lblTotalTotal, HtmlInputText).Style.Add("background-color", "red")
+            lblHorasExcesso2.Style.Add("color", "red")
+            lblHorasExcesso2.Value = "Horas atingiram ou superaram o total de horas permitido para o mês "
+            btnSalvar.Enabled = False
+        End If
 
     End Sub
     Private Sub HabilitarDesabilitarCampo(ByVal Controle As HtmlInputText, ByVal Calen As Calendario)
@@ -1455,8 +1485,10 @@ Partial Public Class ApontamentoNovo
 
     Private Sub salvarNoBanco(ByVal proCodigo As Integer, ByVal dataInicio As Date)
 
+
         ' Preparando variaveis que serão usadas nos SELECTs do Bando de dados
         Dim colCodigo As Integer = Session("colCodigoLogado")
+
 
         Dim varData As DateTime = dataInicio
         Dim dataFim As DateTime = varData.AddMonths(1).AddDays(-1)
@@ -1679,4 +1711,7 @@ Partial Public Class ApontamentoNovo
 
     End Sub
 
+    Protected Overrides Sub Finalize()
+        MyBase.Finalize()
+    End Sub
 End Class

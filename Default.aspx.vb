@@ -161,6 +161,9 @@
 
     Private Sub entrar(ByVal loginUsuario, ByVal senhaUsuario)
 
+
+
+
         Select Case autenticarUsuario(loginUsuario, senhaUsuario)
             Case "0"
                 dr.Read()

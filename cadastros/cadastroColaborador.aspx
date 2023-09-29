@@ -745,7 +745,9 @@
                                     <td>
                                         <div id="divFechado" runat="server" style="display:none;">
                                             <asp:CheckBox ID="cbValorFechado" runat="server" Checked="false" /><span> Fechado</span>
+                                            <asp:CheckBox ID="chkHoraExtra" runat="server" Text="Hora Extra" />
                                         </div>
+                                       
                                     </td>
                                 </tr>
                             </table>            

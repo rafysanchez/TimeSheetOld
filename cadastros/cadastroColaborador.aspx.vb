@@ -164,6 +164,7 @@ Partial Public Class CadastroConsultor
         txtDigitoConta.Text = ""
         txtValorHoraFixo.Text = ""
         cbValorFechado.Checked = False
+        chkHoraExtra.Checked = False
         txtObservacao.Value = ""
         txtNome.Focus()
         btnSalvar.Text = "Salvar"
@@ -264,6 +265,7 @@ Partial Public Class CadastroConsultor
         Dim observacao = "NULL"
         Dim codigoEmpresaSAP = "0"
         Dim DataDesli As String = "NULL"
+        Dim horaExtra As Int16
 
         lblMensagem.Style.Add("color", "Blue")
 
@@ -274,6 +276,15 @@ Partial Public Class CadastroConsultor
         If valor = "" Then
             valor = "NULL"
         End If
+
+
+        If chkHoraExtra.Checked Then
+            horaExtra = 1
+        Else
+            horaExtra = 0
+        End If
+
+
 
         If radioCLT.Checked Then
             tipoContrato = "CLT"
@@ -350,7 +361,7 @@ Partial Public Class CadastroConsultor
              "  ,colEndereco,colCEP,colBairro,colCidade,colUF,colTel,colCel,colEmail1,colEmail2" + vbCrLf +
              "  ,colDataInicio,colDataFim,colTipoContrato,colEmpresaCompartilhada,colRazaoSocial,colInscrMunicipal" + vbCrLf +
              "  ,colCPF,colCNPJ,colCodigoEmpresaSAP,colSalario,colValorFechado,colTipoEmpresa" + vbCrLf +
-             "  ,colBanco,colTipoConta,colAgencia,colConta,colStatus,colObservacao,perCodigo,colPis,colDataDesli" + vbCrLf +
+             "  ,colBanco,colTipoConta,colAgencia,colConta,colStatus,colObservacao,perCodigo,colPis,horasExtras,colDataDesli" + vbCrLf +
              ") VALUES (" + vbCrLf +
              "  '" & login & "'" &
              "  ,'" & senha & "'" &
@@ -390,6 +401,7 @@ Partial Public Class CadastroConsultor
              "  ," & observacao & "" &
              "  ," & ddlPerfil.SelectedValue & "" &
              "  ,'" & txtPis.Text & "'," &
+             "  ,'" & horaExtra & "'," &
              DataDesli &
              ")"
         Else
@@ -434,7 +446,8 @@ Partial Public Class CadastroConsultor
              "  ,colConta = '" & numConta & "'" + vbCrLf +
              "  ,colStatus = '" & ddlStatus.SelectedValue & "'" + vbCrLf +
              "  ,colPis = '" & txtPis.Text & "'" + vbCrLf +
-              "  ,colDataDesli = " & DataDesli & vbCrLf +
+             "  ,horasExtras = " & horaExtra & vbCrLf +
+             "  ,colDataDesli = " & DataDesli & vbCrLf +
              "  ,colObservacao = " & observacao & ""
 
             ' Se foi preenchido uma senha inicial na alteração de cadastro então é preciso alterar no banco de dados e
@@ -930,6 +943,12 @@ Partial Public Class CadastroConsultor
                         btnCadastrarNovo.Visible = True
                         asteriscoSenha.Visible = False
                         lblTitulo.Text = "Alteração de cadastro - '" & dr("colNome") & "'"
+                        If (dr("horasExtras")) Then
+                            chkHoraExtra.Checked = True
+                        Else
+                            chkHoraExtra.Checked = False
+                        End If
+                        chkHoraExtra.Checked = dr("horasExtras")
                         txtNome.Focus()
                     Catch ex As Exception
                         lbltxtPesquisar.Text = ex.Message
